@@ -10,7 +10,8 @@
     "dev": "cd _app && yarn quasar dev",
     "serve": "http-server",
     "build": "cd _app && yarn quasar build && shx cp -R dist/spa-mat/* ..",
-    "generate": "barnstorm init"
+    "generate": "barnstorm init",
+    "init:subdirs": "yarn --cwd _app && yarn --cwd functions"
   },
   "dependencies": {},
   "devDependencies": {
