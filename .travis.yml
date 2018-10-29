@@ -14,7 +14,7 @@ before_install:
 - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.10.1
 - export PATH="$HOME/.yarn/bin:$PATH"
 - yarn init:subdirs
-before_deploy:
+install:
 - yarn build
 jobs:
   include:
