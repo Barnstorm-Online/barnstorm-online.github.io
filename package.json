@@ -7,13 +7,16 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
+    "dev": "cd _app && yarn quasar dev",
     "serve": "http-server",
-    "build": "cd _app && yarn quasar build && shx cp -R dist/spa-mat/* .."
+    "build": "cd _app && yarn quasar build && shx cp -R dist/spa-mat/* ..",
+    "generate": "barnstorm init"
   },
   "dependencies": {},
   "devDependencies": {
+    "barnstorm-cli": "Barnstorm-Online/barnstorm-cli",
     "http-server": "^0.11.1",
-    "quasar-cli": "^0.17.0",
+    "pretty": "^2.0.0",
     "shx": "^0.3.2",
     "strip-ansi": "=3.0.1"
   },

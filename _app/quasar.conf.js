@@ -4,6 +4,8 @@ module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
     plugins: [
+      'pkg',
+      'firebase'
     ],
     css: [
       'app.styl'

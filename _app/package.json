@@ -1,6 +1,6 @@
 {
   "name": "@barnstorm/multi-tenant",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Configurations for Barnstorm Online",
   "productName": "Barnstorm Online Admin",
   "cordovaId": "online.barnstorm.configurator",
@@ -10,9 +10,13 @@
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "firebase": "^5.5.6",
+    "vuefire": "^2.0.0-alpha.15"
+  },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "cross-env": "^5.2.0",
     "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^4.0.1",

@@ -9,3 +9,12 @@ theme: jekyll-theme-primer
 gfm_quirks: paragraph_end
 exclude:
   - node_modules
+  - functions
+  - .firebaserc
+  - database.rules.json
+  - firebase.json
+  - firestore.indexes.json
+  - firestore.rules
+  - vue.config.js
+  - package.json
+  - yarn.lock
