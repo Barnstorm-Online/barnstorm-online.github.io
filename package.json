@@ -1,0 +1,30 @@
+{
+  "name": "@barnstorm/multi-tenant",
+  "version": "0.0.1",
+  "description": "Configurations for Barnstorm Online",
+  "cordovaId": "online.barnstorm.configurator",
+  "author": "Michael J Feher <github@phearzero.com>",
+  "scripts": {
+    "lint": "eslint --ext .js,.vue src",
+    "test": "echo \"No test specified\" && exit 0",
+    "serve": "http-server",
+    "build": "cd _app && yarn quasar build && shx cp -R dist/spa-mat/* .."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "quasar-cli": "^0.17.0",
+    "shx": "^0.3.2",
+    "strip-ansi": "=3.0.1"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
+}
