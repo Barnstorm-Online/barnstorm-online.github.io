@@ -4,6 +4,12 @@ node_js:
 - '8'
 - '9'
 - '10'
+cache:
+  yarn: true
+  directories:
+  - node_modules
+  - _app/node_modules
+  _ functions/node_modules
 before_install:
 - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.10.1
 - export PATH="$HOME/.yarn/bin:$PATH"
