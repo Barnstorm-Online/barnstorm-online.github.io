@@ -16,13 +16,14 @@ before_install:
 - yarn init:subdirs
 before_deploy:
 - yarn build
-deploy:
-  node_js:
-    - stable
-  provider: firebase
-  skip_cleanup: true
-  on:
-    branches:
-      - master
-  token:
-    secure: LYSxI9q/Y10PZsSV0pqb4gfDos7ryCm47bhls4R1P7b/xHYtcxQyS6Y6KS8D48xgph7vw4B3BefrjOaJYp6+0HO+D3axhJ/Z4wMpCZyV8JRdTy1eXfPqx1t7xelQQjFLWO4kOz6xayaZXPLvlgFi+IbknVA5XVzpU0E9xZ8YuI4U0Ry4WCwNo7DOmcplHXG1kkTiwUh87oAWxw4+tVVDr81azxZLYgqFOix0n/d5xppKeTbHr7ScIQIjxcSRD1guzMQP4MxssJst2BeQCW+ZsKe+i+f83wmZffBdFdK8SaMi11yCKuL630sC51nehPdysirPnCYryyj+oCzaVbRuiSArPHdjVJBAlk9dDbfUUauJY0PBz3/zaBVQEyrz3gypcco3ABMcA5/FTKRsGJoudTne16DJiQIY6Mkq3Uqk95QM6JlYezSfCLopd8iVRMtO4pnHSaCTOkWjgBuZP+f/Wc0MuGujaIEmiAGEWZ15Mj9nG8lXS864btjR16GCbdaHF7KLYmC6qSkVUV3a3M0jZyMcrLO9i6AqD5wurxYrg65VcYjKpk3lFb7V/7XZzCi2Wfv/ETF94GDliK1Ma981lRwZJBDUkURs4PaQwhyMQUjlm2t12i+xPvsElgmiEbMGIEZS0++BTnU4xhvTleq6uQczN+Ba3Jes7kP9XGjYhk0=
+jobs:
+  include:
+    - stage: Deploy
+      deploy:
+        provider: firebase
+        skip_cleanup: true
+        on:
+          branches:
+            - master
+        token:
+          secure: LYSxI9q/Y10PZsSV0pqb4gfDos7ryCm47bhls4R1P7b/xHYtcxQyS6Y6KS8D48xgph7vw4B3BefrjOaJYp6+0HO+D3axhJ/Z4wMpCZyV8JRdTy1eXfPqx1t7xelQQjFLWO4kOz6xayaZXPLvlgFi+IbknVA5XVzpU0E9xZ8YuI4U0Ry4WCwNo7DOmcplHXG1kkTiwUh87oAWxw4+tVVDr81azxZLYgqFOix0n/d5xppKeTbHr7ScIQIjxcSRD1guzMQP4MxssJst2BeQCW+ZsKe+i+f83wmZffBdFdK8SaMi11yCKuL630sC51nehPdysirPnCYryyj+oCzaVbRuiSArPHdjVJBAlk9dDbfUUauJY0PBz3/zaBVQEyrz3gypcco3ABMcA5/FTKRsGJoudTne16DJiQIY6Mkq3Uqk95QM6JlYezSfCLopd8iVRMtO4pnHSaCTOkWjgBuZP+f/Wc0MuGujaIEmiAGEWZ15Mj9nG8lXS864btjR16GCbdaHF7KLYmC6qSkVUV3a3M0jZyMcrLO9i6AqD5wurxYrg65VcYjKpk3lFb7V/7XZzCi2Wfv/ETF94GDliK1Ma981lRwZJBDUkURs4PaQwhyMQUjlm2t12i+xPvsElgmiEbMGIEZS0++BTnU4xhvTleq6uQczN+Ba3Jes7kP9XGjYhk0=
