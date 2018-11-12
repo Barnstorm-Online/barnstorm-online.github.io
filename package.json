@@ -9,8 +9,9 @@
     "test": "echo \"No test specified\" && exit 0",
     "dev": "yarn --cwd _app quasar dev",
     "serve": "http-server",
-    "build": "yarn --cwd _app quasar build && yarn copy",
-    "copy": "shx cp -R _app/dist/spa-mat/* ..",
+    "build": "yarn --cwd _app quasar build && yarn clean && yarn copy",
+    "clean": "shx rm -rf js statics img css fonts",
+    "copy": "shx cp -R _app/dist/spa-mat/* .",
     "generate": "barnstorm init",
     "init:subdirs": "yarn --cwd _app && yarn --cwd functions"
   },
