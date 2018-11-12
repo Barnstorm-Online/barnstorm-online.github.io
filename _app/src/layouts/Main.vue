@@ -7,6 +7,7 @@
         :inverted="$q.theme === 'ios'"
       >
         <q-btn
+          v-if="appEnv !== 'dev'"
           flat
           dense
           round
@@ -17,13 +18,20 @@
         </q-btn>
 
         <q-toolbar-title>
-          {{companyInfo.title}}
+          Barnstorm<q-icon class="bs-wifi-logo" name="wifi" />online
           <div slot="subtitle">Running on v{{ $pkg.version }}</div>
         </q-toolbar-title>
       </q-toolbar>
+      <!--<q-btn-->
+        <!--flat-->
+        <!--dense-->
+        <!--round-->
+        <!--aria-label="Menu"-->
+      <!--/>-->
     </q-layout-header>
 
     <q-layout-drawer
+      v-if="appEnv !== 'dev'"
       v-model="leftDrawerOpen"
       :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
     >
@@ -53,6 +61,7 @@ export default {
   name: 'MyLayout',
   data () {
     return {
+      appEnv: 'dev',
       sidebarLinks: [
         {
           icon: 'rss feed',
@@ -74,4 +83,8 @@ export default {
 </script>
 
 <style>
+  .bs-wifi-logo {
+    margin-top: -6px;
+    font-size: 1.8rem;
+  }
 </style>

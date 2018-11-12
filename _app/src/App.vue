@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// import 'components/kh'
 export default {
   name: 'App'
 }

@@ -1,23 +1,24 @@
 <template>
-  <div v-if="!loading">
-    <TenantsPage v-if="isInstalled"/>
-    <InstallPage v-else/>
-  </div>
+  <MaintenancePage v-if="appEnv ==='dev'"/>
+  <MultiTenantPage v-else-if="isInstalled && appEnv !=='dev'"/>
+  <InstallPage v-else/>
 </template>
 
 <style>
 </style>
 
 <script>
-import InstallPage from './Install.vue'
-import TenantsPage from './Tenants.vue'
+import InstallPage from './states/Install'
+import MultiTenantPage from './states/MultiTenant'
+import MaintenancePage from './states/Maintenance'
 export default {
   name: 'PageIndex',
-  components: { InstallPage, TenantsPage },
+  components: { MaintenancePage, InstallPage, MultiTenantPage },
   data () {
     return {
       tenants: [],
-      loading: true
+      loading: true,
+      appEnv: 'dev'
     }
   },
   firestore () {

@@ -4,8 +4,7 @@ module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
     plugins: [
-      'pkg',
-      'firebase'
+      'pkg'
     ],
     css: [
       'app.styl'
@@ -39,8 +38,9 @@ module.exports = function (ctx) {
       // port: 8080,
       open: true // opens browser window automatically
     },
-    // framework: 'all' --- includes everything; for dev only!
+    // framework: 'all', // --- includes everything; for dev only!
     framework: {
+      cssAddon: true,
       components: [
         'QLayout',
         'QLayoutHeader',
@@ -50,6 +50,11 @@ module.exports = function (ctx) {
         'QToolbar',
         'QToolbarTitle',
         'QBtn',
+        'QCard',
+        'QCardTitle',
+        'QCardMain',
+        'QCardActions',
+        'QCardSeparator',
         'QIcon',
         'QList',
         'QListHeader',
@@ -67,10 +72,19 @@ module.exports = function (ctx) {
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
       // i18n: 'de' // Quasar language
     },
-    // animations: 'all' --- includes all animations
-    animations: [],
+    animations: 'all', // --- includes all animations
+    // animations: [],
     ssr: {
-      pwa: false
+      pwa: {
+        runtimeCaching: [
+          {
+            // using a regex, especially useful
+            // when you have Vue Routes with parameters
+            urlPattern: /\/.*/,
+            handler: 'networkFirst'
+          }
+        ]
+      }
     },
     pwa: {
       // workboxPluginMode: 'InjectManifest',

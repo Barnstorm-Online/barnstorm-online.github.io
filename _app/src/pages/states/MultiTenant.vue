@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'TenantsPage'
+  name: 'MultiTenantPage'
 }
 </script>
 
